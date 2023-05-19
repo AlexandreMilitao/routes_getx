@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:rotas_getx/controller/page_one_controller.dart';
 import 'package:rotas_getx/pages/page_two.dart';
 
 class Tela1 extends StatelessWidget {
-  const Tela1({Key? key}) : super(key: key);
+  Tela1({Key? key}) : super(key: key);
+
+  PageOneController _controller = Get.put(PageOneController());
 
   @override
   Widget build(BuildContext context) {
@@ -12,16 +15,30 @@ class Tela1 extends StatelessWidget {
         appBar: AppBar(
           title: const Text("Tela 1"),
         ),
-        body: Center(
-          child: ElevatedButton(
-            onPressed: () {
-              Get.to(
-                () => const Tela2(),
-                arguments: 'Dado da Tela 1',
-              );
-            },
-            child: const Text("ir para Pagina 2"),
-          ),
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Obx(
+              () => Text(
+                "Voce apertou o botao ${_controller.number.toString()}",
+              ),
+            ),
+            Center(
+              child: ElevatedButton(
+                onPressed: () {
+                  Get.to(
+                    () => const Tela2(),
+                    arguments: _controller.number.toString(),
+                  );
+                },
+                child: const Text("ir para Pagina 2"),
+              ),
+            ),
+          ],
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: _controller.incrementeNumber,
+          child: const Icon(Icons.add),
         ),
       ),
     );
