@@ -6,7 +6,7 @@ import 'package:rotas_getx/pages/page_two.dart';
 class Tela1 extends StatelessWidget {
   Tela1({Key? key}) : super(key: key);
 
-  PageOneController _controller = Get.put(PageOneController());
+  final PageOneController _controller = Get.put(PageOneController());
 
   @override
   Widget build(BuildContext context) {
