@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       initialRoute: '/',
       getPages: [
-        GetPage(name: '/', page: () => const Tela1()),
+        GetPage(name: '/', page: () => Tela1()),
         GetPage(name: '/Tela2', page: () => const Tela2()),
       ],
     );

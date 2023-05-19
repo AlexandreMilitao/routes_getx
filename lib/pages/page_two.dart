@@ -9,7 +9,7 @@ class Tela2 extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Tela 1 ${Get.arguments}"),
+          title: Text("Tela 2 ${Get.arguments}"),
         ),
         body: Center(
           child: ElevatedButton(
