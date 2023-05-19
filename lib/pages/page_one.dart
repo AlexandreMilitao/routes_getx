@@ -12,16 +12,21 @@ class Tela1 extends StatelessWidget {
         appBar: AppBar(
           title: const Text("Tela 1"),
         ),
-        body: Center(
-          child: ElevatedButton(
-            onPressed: () {
-              Get.to(
-                () => const Tela2(),
-                arguments: 'Dado da Tela 1',
-              );
-            },
-            child: const Text("ir para Pagina 2"),
-          ),
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Center(
+              child: ElevatedButton(
+                onPressed: () {
+                  Get.toNamed(
+                    '/Tela2',
+                    arguments: 'Dado da Tela 1',
+                  );
+                },
+                child: const Text("ir para Pagina 2"),
+              ),
+            ),
+          ],
         ),
       ),
     );
